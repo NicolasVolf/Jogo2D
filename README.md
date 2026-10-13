@@ -11,5 +11,6 @@ Projeto individual da disciplina Jogos Digitais (Insper), feito a partir do tuto
 
 ## Créditos
 
+- Sprites: [Fish Pack](https://kenney.nl/assets/fish-pack) por Kenney (www.kenney.nl) — licença CC0
 - Efeito sonoro de moeda: "drop coin" por gamestudio — [Freesound](https://freesound.org/)
 - Feito com Unity 6 (6000.6.4f1), Universal 2D
