@@ -53,7 +53,11 @@ public class UImanager : MonoBehaviour
 
             if (endGameText != null)
             {
-                if (EndGame.IsTimeUp())
+                if (EndGame.IsDead())
+                {
+                    endGameText.text = "Você morreu!";
+                }
+                else if (EndGame.IsTimeUp())
                 {
                     endGameText.text = "Tempo esgotado!";
                 }
