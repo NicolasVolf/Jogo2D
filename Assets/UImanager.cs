@@ -9,6 +9,7 @@ public class UImanager : MonoBehaviour
     public float timeLimit = 30f;
     public AudioClip winSound;
     public AudioClip loseSound;
+    public AudioSource music;
 
     private bool gameOverShown;
     private float elapsedTime;
@@ -55,7 +56,12 @@ public class UImanager : MonoBehaviour
             endGamePanel.SetActive(true);
             Time.timeScale = 0f;
 
-            // Som de vitoria ou derrota
+            // Para a musica de fundo e toca o som de vitoria ou derrota
+            if (music != null)
+            {
+                music.Stop();
+            }
+
             if (audioSource != null)
             {
                 audioSource.PlayOneShot(EndGame.IsDead() || EndGame.IsTimeUp() ? loseSound : winSound);
