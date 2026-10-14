@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UImanager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UImanager : MonoBehaviour
     public TMP_Text scoreText;
     public Image[] lifeIcons; // um peixinho por vida
     public TMP_Text endGameText;
+    public GameObject firstButton; // botao selecionado no fim de jogo (para o controle)
     public float timeLimit = 30f;
     public AudioClip winSound;
     public AudioClip loseSound;
@@ -70,6 +72,12 @@ public class UImanager : MonoBehaviour
             gameOverShown = true;
             endGamePanel.SetActive(true);
             Time.timeScale = 0f;
+
+            // Seleciona um botao para dar para navegar com o controle
+            if (firstButton != null && EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(firstButton);
+            }
 
             // Para a musica de fundo e toca o som de vitoria ou derrota
             if (music != null)

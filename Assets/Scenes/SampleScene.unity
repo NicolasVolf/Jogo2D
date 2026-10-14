@@ -526,6 +526,7 @@ MonoBehaviour:
   - {fileID: 1161199302}
   - {fileID: 1802513163}
   endGameText: {fileID: 1804665463}
+  firstButton: {fileID: 576873581}
   timeLimit: 30
   winSound: {fileID: 8300000, guid: b4f9800d28839684ab267ec3f3e61620, type: 3}
   loseSound: {fileID: 8300000, guid: 98cf5da87c39730458ebc7b595b92fe0, type: 3}

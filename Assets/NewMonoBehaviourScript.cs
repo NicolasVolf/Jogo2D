@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -27,6 +28,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
+        // Controle (Xbox/joystick): analogico esquerdo e D-pad
+        if (Gamepad.current != null)
+        {
+            movement += Gamepad.current.leftStick.ReadValue();
+            movement += Gamepad.current.dpad.ReadValue();
+        }
 
         rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
     }
