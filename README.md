@@ -7,7 +7,8 @@ Projeto individual da disciplina Jogos Digitais (Insper), feito a partir do tuto
 ## Como jogar
 
 - **Movimento:** setas ou WASD
-- **Objetivo:** coletar todos os triângulos
+- **Objetivo:** pescar todos os peixes antes do tempo acabar
+- **Cuidado:** o baiacu tira uma vida a cada encostada; com 0 vidas você perde (são 2)
 
 ## Créditos
 

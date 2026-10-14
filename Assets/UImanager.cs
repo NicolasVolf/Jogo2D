@@ -1,10 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UImanager : MonoBehaviour
 {
     public GameObject endGamePanel;
     public TMP_Text timerText;
+    public TMP_Text scoreText;
+    public Image[] lifeIcons; // um peixinho por vida
     public TMP_Text endGameText;
     public float timeLimit = 30f;
     public AudioClip winSound;
@@ -48,6 +51,18 @@ public class UImanager : MonoBehaviour
             {
                 EndGame.TimeUp();
             }
+        }
+
+        // Placar e vidas
+        if (scoreText != null)
+        {
+            scoreText.text = "Peixes: " + EndGame.GetScore() + "/" + EndGame.GetTotal();
+        }
+
+        // Vida perdida fica com o icone apagado
+        for (int i = 0; i < lifeIcons.Length; i++)
+        {
+            lifeIcons[i].color = i < EndGame.GetLives() ? Color.white : new Color(1f, 1f, 1f, 0.25f);
         }
 
         if (EndGame.IsGameOver())

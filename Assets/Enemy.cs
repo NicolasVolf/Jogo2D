@@ -27,11 +27,13 @@ public class Enemy : MonoBehaviour
         rb.MovePosition(new Vector2(startPosition.x, startPosition.y + offset));
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    // Stay: se o jogador continuar encostando, perde outra vida depois do tempo de invencibilidade
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponent<NewMonoBehaviourScript>() != null)
+        NewMonoBehaviourScript player = other.GetComponent<NewMonoBehaviourScript>();
+        if (player != null)
         {
-            EndGame.Die();
+            player.TakeDamage();
         }
     }
 }
