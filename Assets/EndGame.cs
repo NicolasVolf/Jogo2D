@@ -9,18 +9,24 @@ public static class EndGame
     private static bool initialized;
     private static bool timeUp;
     private static bool dead;
+    private static bool treasureFound;
 
     public const int MaxLives = 2;
     private const float InvincibleTime = 1f; // tempo sem levar dano depois de um hit
 
     public static bool IsGameOver()
     {
-        return initialized && (collectableCount == 0 || timeUp || dead);
+        return initialized && (collectableCount == 0 || timeUp || dead || treasureFound);
     }
 
     public static bool IsTimeUp()
     {
         return timeUp;
+    }
+
+    public static bool IsTreasureFound()
+    {
+        return treasureFound;
     }
 
     public static bool IsDead()
@@ -52,6 +58,7 @@ public static class EndGame
         initialized = true;
         timeUp = false;
         dead = false;
+        treasureFound = false;
     }
 
     public static void Collect()
@@ -59,6 +66,15 @@ public static class EndGame
         if (initialized && collectableCount > 0)
         {
             collectableCount--;
+        }
+    }
+
+    // Pegar o tesouro vence o jogo na hora
+    public static void FindTreasure()
+    {
+        if (initialized && !IsGameOver())
+        {
+            treasureFound = true;
         }
     }
 

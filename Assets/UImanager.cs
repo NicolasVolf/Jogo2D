@@ -100,6 +100,10 @@ public class UImanager : MonoBehaviour
                 {
                     endGameText.text = "Tempo esgotado!";
                 }
+                else if (EndGame.IsTreasureFound())
+                {
+                    endGameText.text = "Você achou o tesouro!\nTempo final: " + elapsedTime.ToString("F1") + "s";
+                }
                 else
                 {
                     endGameText.text = "Você venceu!\nTempo final: " + elapsedTime.ToString("F1") + "s";
