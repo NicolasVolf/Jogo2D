@@ -1,4 +1,4 @@
-# Jogo 2D — Projeto Introdução ao Unity
+# Peixe Tesouro — Projeto Introdução ao Unity
 
 Projeto individual da disciplina Jogos Digitais (Insper), feito a partir do tutorial "Introdução Rápida".
 
