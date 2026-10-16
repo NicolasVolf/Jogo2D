@@ -4,6 +4,8 @@ Projeto individual da disciplina Jogos Digitais (Insper), feito a partir do tuto
 
 **Autor:** Nicolas Volf
 
+**Jogue no navegador:** https://nicolasvolf.itch.io/peixe-tesouro
+
 ## Como jogar
 
 - **Movimento:** setas, WASD ou analógico esquerdo / D-pad do controle (Xbox ou similar)
